@@ -1,0 +1,55 @@
+.contact-section {
+    padding: 140px 20px;
+    background-color: var(--surface-color);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.contact-desc {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    max-width: 600px;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-large {
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    border-radius: 99px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+}
