@@ -15,7 +15,8 @@
   /* Semantic Variables */
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.05);
-  --card-bg: var(--surface-color); /* Clean solid surface */
+  --card-bg: var(--surface-color);
+  /* Clean solid surface */
 
   /* Better Shadows */
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -47,7 +48,8 @@
   /* Cleaner glass */
   --glass-bg: #f5f5f5;
   --glass-border: rgba(0, 0, 0, 0.05);
-  --card-bg: var(--surface-color); /* Clean solid surface */
+  --card-bg: var(--surface-color);
+  /* Clean solid surface */
 
   /* Better shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);

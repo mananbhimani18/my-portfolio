@@ -3,6 +3,13 @@ import { SiJavascript, SiMongodb, SiPostgresql } from "react-icons/si";
 
 export const portfolio = {
     name: "Manan Bhimani",
+
+    roles: [
+        "RPA Developer",
+        "Full Stack Developer",
+        "Automation Engineer"
+    ],
+
     role: "RPA Developer & Full Stack Developer",
 
     about:

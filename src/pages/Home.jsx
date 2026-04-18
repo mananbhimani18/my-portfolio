@@ -5,6 +5,8 @@ import Skills from "../sections/Skills";
 import Contact from "../sections/Contact";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 function Home() {
     const { hash } = useLocation();
@@ -30,9 +32,23 @@ function Home() {
                 <TechBackground />
                 <div className="container">
                     <h1>
-                        Hi, I'm <span>{portfolio.name}</span>
+                        Hi, I'm{" "}
+                        <motion.span
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="hero-name"
+                        >
+                            {portfolio.name}
+                        </motion.span>
                     </h1>
-                    <h2>{portfolio.role}</h2>
+                    <h2>
+                        <TypeAnimation
+                            sequence={portfolio.roles.flatMap(role => [role, 2000])}
+                            speed={50}
+                            repeat={Infinity}
+                        />
+                    </h2>
                     <p>{portfolio.about}</p>
                     <div className="buttons">
                         <a href="#projects" className="btn primary">View Projects</a>
