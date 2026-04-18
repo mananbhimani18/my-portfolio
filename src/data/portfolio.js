@@ -20,7 +20,7 @@ export const portfolio = {
             title: "Appraisal System",
             description:
                 "Full-stack employee appraisal system with authentication, OTP verification, dashboard, and activity tracking.",
-            tech: ["React", "Node.js", "MongoDB"],
+            tech: ["RPA", "React.js", "Node.js"],
 
             github: {
                 frontend: "https://github.com/mananbhimani18/manan-appraisal-frontend",
