@@ -1,5 +1,5 @@
 import { portfolio } from "../data/portfolio";
-import "./portfolio.css";
+import "./Portfolio.css";
 
 function Portfolio() {
     return (
