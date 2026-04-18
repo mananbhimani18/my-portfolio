@@ -19,7 +19,7 @@ export const portfolio = {
         {
             title: "Appraisal System",
             description:
-                "Full-stack employee appraisal system with authentication, OTP verification, dashboard, and activity tracking.",
+                "Built an automated employee appraisal system combining RPA workflows with a React–Node.js stack, enabling secure authentication, OTP verification, real-time dashboards, and process-driven activity tracking.",
             tech: ["RPA", "React.js", "Node.js"],
 
             github: {
