@@ -10,12 +10,13 @@ function CertificationsPage() {
 
     return (
         <motion.main
-            className="resume-page"  // 👈 IMPORTANT (reuse same layout feel)
+            className="cert-page"  // 👈 IMPORTANT (reuse same layout feel)
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
         >
-            <div className="resume-container">
+            <div className="light-sweep"></div>
+            <div className="cert-container">
                 <Certifications />
             </div>
         </motion.main>
