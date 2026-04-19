@@ -109,6 +109,7 @@ const Navbar = () => {
             <nav className="navbar-links-desktop">
               <Link to="/#projects" className="nav-link">Projects</Link>
               <Link to="/#skills" className="nav-link">Skills</Link>
+              <Link to="/certifications" className="nav-link">Certificates</Link>
               <Link to="/#contact" className="nav-link">Contact</Link>
               <Link to="/resume" className="nav-link">Resume</Link>
             </nav>
@@ -146,8 +147,9 @@ const Navbar = () => {
           <nav className="mobile-nav-links">
             <Link to="/#projects" className="mobile-nav-link" onClick={closeMenu} style={{ transitionDelay: isMenuOpen ? '50ms' : '0ms' }}>Projects</Link>
             <Link to="/#skills" className="mobile-nav-link" onClick={closeMenu} style={{ transitionDelay: isMenuOpen ? '100ms' : '0ms' }}>Skills</Link>
-            <Link to="/#contact" className="mobile-nav-link" onClick={closeMenu} style={{ transitionDelay: isMenuOpen ? '150ms' : '0ms' }}>Contact</Link>
-            <Link to="/resume" className="mobile-nav-link" onClick={closeMenu} style={{ transitionDelay: isMenuOpen ? '200ms' : '0ms' }}>Resume</Link>
+            <Link to="/certifications" className="mobile-nav-link" onClick={closeMenu} style={{ transitionDelay: isMenuOpen ? '150ms' : '0ms' }}>Certificates</Link>
+            <Link to="/#contact" className="mobile-nav-link" onClick={closeMenu} style={{ transitionDelay: isMenuOpen ? '200ms' : '0ms' }}>Contact</Link>
+            <Link to="/resume" className="mobile-nav-link" onClick={closeMenu} style={{ transitionDelay: isMenuOpen ? '250ms' : '0ms' }}>Resume</Link>
           </nav>
         </div>
       </header>

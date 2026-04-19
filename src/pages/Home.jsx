@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-
 function Home() {
     const { hash } = useLocation();
 

@@ -115,5 +115,38 @@ export const portfolio = {
             duration: "2021 – 2024",
             location: "Surat"
         }
+    ],
+
+    certifications: [
+        {
+            title: "Aisera GPT Basic Certification",
+            issuer: "Aisera",
+            date: "Apr 2026",
+            image: "/assets/certificates/aisera.png",
+            link: "https://certificates.automationanywhere.com/embed/fe3d8eb6-78e2-4ae5-92ca-295ced38465f"
+        },
+        {
+            title: "Automation Anywhere Certified Essentials",
+            issuer: "Automation Anywhere",
+            date: "Dec 2025",
+            image: "/assets/certificates/automation-essential.png",
+            link: "https://certificates.automationanywhere.com/embed/e5c53eae-a59d-4d6d-8bdc-0dc9cd4eeeb1"
+
+        },
+        {
+            title: "Citizen Developer Career Quest - Start Phase",
+            issuer: "Automation Anywhere",
+            date: "Dec 2025",
+            image: "/assets/certificates/citizen-dev.png",
+            link: "https://certificates.automationanywhere.com/embed/99edb2c0-658b-4579-820a-4841baf48f39"
+
+        },
+        {
+            title: "Automation Developer Career Quest - Accelerate Phase",
+            issuer: "Automation Anywhere",
+            date: "Dec 2025",
+            image: "/assets/certificates/automation-dev.png",
+            link: "https://certificates.automationanywhere.com/embed/0bd8357b-38ef-4da9-b8dd-8d66dccaa833"
+        }
     ]
 };
