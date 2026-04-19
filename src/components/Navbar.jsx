@@ -11,9 +11,12 @@ const Navbar = () => {
 
   // Initialize theme from localStorage or default to dark
   useEffect(() => {
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    const savedTheme = localStorage.getItem('portfolio-theme');
+
+    const themeToApply = savedTheme ? savedTheme : 'dark';
+
+    setTheme(themeToApply);
+    document.documentElement.setAttribute('data-theme', themeToApply);
   }, []);
 
   // Handle scroll detection
@@ -33,7 +36,7 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = '';
     }
-    
+
     return () => {
       document.body.style.overflow = ''; // Cleanup
     };
@@ -43,8 +46,8 @@ const Navbar = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        isMenuOpen && 
-        menuRef.current && 
+        isMenuOpen &&
+        menuRef.current &&
         !menuRef.current.contains(event.target) &&
         toggleRef.current &&
         !toggleRef.current.contains(event.target)
@@ -88,8 +91,8 @@ const Navbar = () => {
   return (
     <>
       {/* Premium Full-Screen Overlay */}
-      <div 
-        className={`mobile-backdrop ${isMenuOpen ? 'open' : ''}`} 
+      <div
+        className={`mobile-backdrop ${isMenuOpen ? 'open' : ''}`}
         onClick={closeMenu}
         aria-hidden="true"
       />
@@ -111,8 +114,8 @@ const Navbar = () => {
             </nav>
 
             {/* Theme Toggle (Visible on Desktop & Mobile) */}
-            <button 
-              className="theme-toggle" 
+            <button
+              className="theme-toggle"
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
@@ -120,9 +123,9 @@ const Navbar = () => {
             </button>
 
             {/* Hamburger Menu Icon for Mobile */}
-            <button 
+            <button
               ref={toggleRef}
-              className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} 
+              className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
               onClick={toggleMenu}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
@@ -135,7 +138,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation Dropdown */}
-        <div 
+        <div
           className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}
           ref={menuRef}
           aria-hidden={!isMenuOpen}

@@ -151,6 +151,7 @@
     border-top: 1px solid var(--border-color);
     background-color: transparent;
 }
+
 .resume-embedded .heading {
     margin-bottom: 32px;
     font-size: 1.4rem;
@@ -161,7 +162,8 @@
     position: absolute;
     top: -9999px;
     left: -9999px;
-    width: 794px; /* A4 width at 96 DPI */
+    width: 794px;
+    /* A4 width at 96 DPI */
     background: #ffffff;
     z-index: -1000;
 }
@@ -243,7 +245,8 @@
     margin-bottom: 4px;
 }
 
-.pdf-role, .pdf-degree {
+.pdf-role,
+.pdf-degree {
     font-size: 14px;
     font-weight: 600;
     color: #000000;
@@ -255,7 +258,8 @@
     font-weight: 500;
 }
 
-.pdf-company, .pdf-institution {
+.pdf-company,
+.pdf-institution {
     font-size: 13px;
     font-style: italic;
     color: #333333;
@@ -294,4 +298,14 @@
     font-size: 12px;
     color: #444444;
     margin-top: 4px;
+}
+
+.timeline-item,
+.timeline-content,
+.timeline-header,
+.timeline-content h4,
+.timeline-content h5,
+.timeline-content p,
+.timeline-content span {
+    user-select: none;
 }

@@ -21,21 +21,26 @@
 
 .card {
     background: var(--card-bg);
-    box-shadow: var(--shadow-sm);
     padding: 36px 32px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
     display: flex;
     flex-direction: column;
+
     box-shadow: var(--shadow-md);
+
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    will-change: transform;
+
+    position: relative;
+    overflow: hidden;
 }
 
-.card:hover {
-    transform: translateY(-6px) scale(1.01);
-    border-color: var(--accent-color);
-    box-shadow: var(--shadow-lg), 0 0 24px rgba(78, 161, 255, 0.15);
-}
+
+
+
 
 .card h3 {
     font-size: 1.35rem;
@@ -43,6 +48,31 @@
     color: var(--text-main);
     font-weight: 600;
     letter-spacing: -0.01em;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+            rgba(78, 161, 255, 0.18),
+            transparent 60%);
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.card:hover {
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 10px 20px rgba(78, 161, 255, 0.15);
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .desc {
@@ -68,6 +98,8 @@
     border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 500;
+    transform: translateZ(20px);
+
 }
 
 .links {
@@ -107,4 +139,32 @@
     font-size: 0.85rem !important;
     user-select: none;
     pointer-events: none;
+}
+
+.card h3,
+.desc,
+.tech,
+.links {
+    transform: translateZ(25px);
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.06),
+            transparent 40%,
+            rgba(0, 0, 0, 0.2));
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover::after {
+    opacity: 1;
 }

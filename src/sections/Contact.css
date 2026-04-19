@@ -3,6 +3,26 @@
     background-color: var(--surface-color);
     text-align: center;
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(78, 161, 255, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.contact-section::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--accent-color);
+    margin: 60px auto 0;
+    opacity: 0.6;
 }
 
 .contact-container {
@@ -20,6 +40,10 @@
     margin-bottom: 24px;
     letter-spacing: -0.03em;
     line-height: 1.1;
+    overflow: hidden;
+    text-shadow: 0 0 20px rgba(78, 161, 255, 0.15);
+
+
 }
 
 .contact-desc {
@@ -41,7 +65,27 @@
     padding: 16px 36px;
     font-size: 1.1rem;
     border-radius: 99px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-large:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(78, 161, 255, 0.25);
+}
+
+.btn-large::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-large:hover::before {
+    opacity: 1;
 }
 
 .linkedin-btn {
@@ -52,4 +96,9 @@
 
 .contact-icon {
     font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.linkedin-btn:hover .contact-icon {
+    transform: translateX(5px) scale(1.1);
 }
