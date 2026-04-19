@@ -86,11 +86,58 @@
     cursor: pointer;
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+
+    padding: 1px;
+
+    background: linear-gradient(120deg,
+            transparent 40%,
+            rgba(78, 161, 255, 0.5) 50%,
+            transparent 60%);
+
+    background-size: 200% 200%;
+    /* 👈 important */
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+}
+
+@keyframes electricFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 .cert-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-lg), 0 0 20px rgba(78, 161, 255, 0.15);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 12px rgba(78, 161, 255, 0.25);
+}
+
+.cert-card:hover::before {
+    opacity: 1;
+    animation: electricFlow 3.5s linear infinite;
 }
 
 /* IMAGE */
