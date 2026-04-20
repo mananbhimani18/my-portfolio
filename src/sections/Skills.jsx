@@ -27,6 +27,7 @@ function Skills() {
 
     return (
         <section className="skills-section" id="skills">
+            <div className="pulse-glow"></div>
             <h2 className="heading">Skills</h2>
 
             <div className="skills-grid">

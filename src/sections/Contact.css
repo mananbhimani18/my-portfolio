@@ -1,59 +1,71 @@
+/* ================= SECTION ================= */
 .contact-section {
-    padding: 140px 20px;
-    background-color: var(--surface-color);
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    padding: 140px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.contact-section::before {
-    content: "";
+/* ================= BACKGROUND ================= */
+.contact-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(78, 161, 255, 0.08), transparent 70%);
+    z-index: 0;
     pointer-events: none;
 }
 
-.contact-section::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--accent-color);
-    margin: 60px auto 0;
-    opacity: 0.6;
+/* ensure rays fill */
+.contact-bg>* {
+    width: 100%;
+    height: 100%;
 }
 
+/* ================= OVERLAY ================= */
+.contact-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ================= CONTENT ================= */
 .contact-container {
+    position: relative;
+    z-index: 2;
+
     max-width: 800px;
     margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* ================= HEADING ================= */
 .contact-heading {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     color: var(--text-main);
+
     margin-bottom: 24px;
     letter-spacing: -0.03em;
     line-height: 1.1;
+
     overflow: hidden;
-    text-shadow: 0 0 20px rgba(78, 161, 255, 0.15);
-
-
 }
 
+/* ================= DESCRIPTION ================= */
 .contact-desc {
     font-size: 1.125rem;
     color: var(--text-muted);
+
     line-height: 1.7;
     margin-bottom: 48px;
     max-width: 600px;
 }
 
+/* ================= ACTIONS ================= */
 .contact-actions {
     display: flex;
     gap: 20px;
@@ -61,13 +73,16 @@
     justify-content: center;
 }
 
+/* ================= BUTTON ================= */
 .btn-large {
     padding: 16px 36px;
     font-size: 1.1rem;
-    border-radius: 99px;
-    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    border-radius: 999px;
+
     position: relative;
     overflow: hidden;
+
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
 }
 
 .btn-large:hover {
@@ -79,7 +94,11 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 60%);
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.25),
+            transparent 60%);
+
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -88,12 +107,14 @@
     opacity: 1;
 }
 
+/* ================= LINKEDIN ================= */
 .linkedin-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
 }
 
+/* ================= ICON ================= */
 .contact-icon {
     font-size: 1.2rem;
     transition: transform 0.3s ease;
@@ -101,4 +122,69 @@
 
 .linkedin-btn:hover .contact-icon {
     transform: translateX(5px) scale(1.1);
+}
+
+/* ========================================================= */
+/* ======================= DARK MODE ======================== */
+/* ========================================================= */
+
+[data-theme="dark"] .contact-section {
+    background-color: var(--surface-color);
+}
+
+[data-theme="dark"] .contact-bg {
+    filter: blur(120px);
+    opacity: 0.35;
+}
+
+[data-theme="dark"] .contact-overlay {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.4) 40%,
+            rgba(0, 0, 0, 0.85) 100%);
+}
+
+[data-theme="dark"] .contact-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background: radial-gradient(circle at top center,
+            rgba(255, 255, 255, 0.12),
+            transparent 60%);
+}
+
+/* ========================================================= */
+/* ======================= LIGHT MODE ======================= */
+/* ========================================================= */
+
+[data-theme="light"] .contact-section {
+    background-color: #ffffff;
+}
+
+[data-theme="light"] .contact-bg {
+    filter: blur(120px);
+    opacity: 0.2;
+    /* lighter than dark mode */
+}
+
+[data-theme="light"] .contact-overlay {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 0.4) 40%,
+            rgba(255, 255, 255, 0.95) 100%);
+}
+
+[data-theme="light"] .contact-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background: radial-gradient(circle at top center,
+            rgba(0, 0, 0, 0.06),
+            transparent 60%);
 }

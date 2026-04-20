@@ -353,3 +353,58 @@
 .timeline-content span {
     user-select: none;
 }
+
+/* ===== DOWNLOAD BUTTON LOADING ===== */
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* spinner */
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+/* disable style */
+.download-btn.loading {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* subtle shine while loading */
+.download-btn.loading::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    animation: loadingShine 1.5s linear infinite;
+}
+
+/* animations */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loadingShine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}

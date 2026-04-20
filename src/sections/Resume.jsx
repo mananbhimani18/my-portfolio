@@ -58,8 +58,19 @@ function Resume() {
                         <h2>{portfolio.role}</h2>
                     </div>
                     <div className="header-actions">
-                        <button onClick={handleDownloadPdf} disabled={isGenerating} className="btn primary">
-                            {isGenerating ? "Generating..." : "Download Resume (PDF)"}
+                        <button
+                            onClick={handleDownloadPdf}
+                            disabled={isGenerating}
+                            className={`btn primary download-btn ${isGenerating ? "loading" : ""}`}
+                        >
+                            {isGenerating ? (
+                                <>
+                                    <span className="spinner"></span>
+                                    Generating PDF...
+                                </>
+                            ) : (
+                                "Download Resume (PDF)"
+                            )}
                         </button>
                         <Link to="/" className="btn outline">Back to Portfolio</Link>
                     </div>

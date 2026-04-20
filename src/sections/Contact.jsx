@@ -2,11 +2,31 @@ import { portfolio } from "../data/portfolio";
 import "./Contact.css";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Magnet from "../components/Magnet";
+import LightRays from "../components/LightRays"; // ✅ IMPORT
 
 function Contact() {
     return (
         <section className="contact-section" id="contact">
 
+            {/* 🔥 BACKGROUND LAYER */}
+            <div className="contact-bg">
+                <LightRays
+                    raysOrigin="top-center"
+                    raysColor="#ffffff"
+                    raysSpeed={0.4}
+                    lightSpread={2.0}     // 🔥 VERY wide
+                    rayLength={1.0}
+                    followMouse={false}
+                    noiseAmount={0.02}
+                    distortion={0.01}
+                    fadeDistance={2.5}    // 🔥 smoother fade
+                    saturation={0.6}
+                />
+            </div>
+
+            <div className="contact-overlay" />
+            {/* 🔥 CONTENT */}
             <motion.div
                 className="contact-container"
                 initial="hidden"
@@ -19,7 +39,7 @@ function Contact() {
                 }}
             >
 
-                {/* 🔥 Heading (Mask Reveal) */}
+                {/* Heading */}
                 <motion.h2
                     className="contact-heading"
                     initial={{ clipPath: "inset(0 100% 0 0)" }}
@@ -48,18 +68,22 @@ function Contact() {
                         visible: { opacity: 1, scale: 1 }
                     }}
                 >
-                    <a href={`mailto:${portfolio.email}`} className="btn primary btn-large">
-                        Get in Touch
-                    </a>
+                    <Magnet strength={30}>
+                        <a href={`mailto:${portfolio.email}`} className="btn primary btn-large">
+                            Get in Touch
+                        </a>
+                    </Magnet>
 
-                    <a
-                        href={portfolio.socials.linkedin}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn outline btn-large linkedin-btn"
-                    >
-                        <FaLinkedin className="contact-icon" /> LinkedIn
-                    </a>
+                    <Magnet strength={30}>
+                        <a
+                            href={portfolio.socials.linkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn outline btn-large linkedin-btn"
+                        >
+                            <FaLinkedin className="contact-icon" /> LinkedIn
+                        </a>
+                    </Magnet>
                 </motion.div>
 
             </motion.div>

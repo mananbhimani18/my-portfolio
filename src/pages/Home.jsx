@@ -1,6 +1,6 @@
 import { portfolio } from "../data/portfolio";
 import TechBackground from "../components/TechBackground";
-import Portfolio from "../sections/Portfolio";
+import Portfolio from "../sections/portfolio";
 import Skills from "../sections/Skills";
 import Contact from "../sections/Contact";
 import { useEffect } from "react";
