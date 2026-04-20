@@ -3,29 +3,16 @@ import "./Contact.css";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Magnet from "../components/Magnet";
-import LightRays from "../components/LightRays"; // ✅ IMPORT
 
 function Contact() {
     return (
         <section className="contact-section" id="contact">
 
-            {/* 🔥 BACKGROUND LAYER */}
-            <div className="contact-bg">
-                <LightRays
-                    raysOrigin="top-center"
-                    raysColor="#ffffff"
-                    raysSpeed={0.4}
-                    lightSpread={2.0}     // 🔥 VERY wide
-                    rayLength={1.0}
-                    followMouse={false}
-                    noiseAmount={0.02}
-                    distortion={0.01}
-                    fadeDistance={2.5}    // 🔥 smoother fade
-                    saturation={0.6}
-                />
-            </div>
+            {/* 🔥 (Removed LightRays background) */}
 
+            {/* Optional: keep overlay if your CSS uses it */}
             <div className="contact-overlay" />
+
             {/* 🔥 CONTENT */}
             <motion.div
                 className="contact-container"
